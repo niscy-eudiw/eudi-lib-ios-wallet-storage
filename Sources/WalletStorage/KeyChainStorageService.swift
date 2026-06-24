@@ -38,10 +38,10 @@ public actor KeyChainStorageService: DataStorageService  {
 		return try await loadDocumentHelper(id: id, status: status)
 	}
     
-    public func loadDocumentMetadata(id: String) async throws -> MdocDataModel18013.DocMetadata? {
+    public func loadDocumentMetadata(id: String, status: DocumentStatus) async throws -> MdocDataModel18013.DocMetadata? {
         let placeholderDocument = try await loadDocumentHelper(
             id: id,
-            status: .issued,
+            status: status,
             needIndexToUse: false
         )
         guard let placeholderDocument else { return nil }

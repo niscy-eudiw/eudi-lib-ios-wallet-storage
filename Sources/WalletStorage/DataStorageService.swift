@@ -24,7 +24,7 @@ public protocol DataStorageService: Actor {
 	/// if no credential document is left, it returns nil
     func loadDocument(id: String, status: DocumentStatus) async throws -> Document?
 	/// load document metadata from an issued document
-    func loadDocumentMetadata(id: String) async throws -> DocMetadata?
+    func loadDocumentMetadata(id: String, status: DocumentStatus) async throws -> DocMetadata?
 	/// load the placeholder documents for display
 	func loadDocuments(status: DocumentStatus) async throws -> [Document]?
 	/// save a document and optionally a batch of documents with different corresponding private keys
