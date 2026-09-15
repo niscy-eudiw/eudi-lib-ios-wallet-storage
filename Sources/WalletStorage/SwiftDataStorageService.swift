@@ -20,6 +20,8 @@ import SwiftData
 
 @Model
 public final class SwiftDataStoredDocument {
+	#Index<SwiftDataStoredDocument>([\.documentId])
+
 	@Attribute(.unique) var storageKey: String
 	var documentId: String
 	var credentialId: String
